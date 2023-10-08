@@ -1,12 +1,10 @@
 name: Documentation
 
 on:
-  schedule:
-    - cron: '0 0 * * 0'  # At 00:00 every Sunday
   push:
-    branches: [ main ]
+    branches: [ tls ]
   pull_request:
-    branches: [ main ]
+    branches: [ tls ]
 
 jobs:
 
@@ -15,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
       - name: Check links
         uses: gaurav-nelson/github-action-markdown-link-check@v1
